@@ -1,0 +1,15 @@
+version: '3'
+services:
+    run:
+        image: htmdev304/mpython3m
+        container_name: run_py
+        build:
+            context: ./
+            dockerfile: Dockerfile.ps
+        environment:
+            - CREDENTIALS=credentials.py
+            - APP_NAME=s3_get_file.py
+            - LIST_TMP=list_tmp.txt
+            - OUTPUT=vpn
+        volumes:
+            - ./:/app

@@ -1,0 +1,8 @@
+FROM python:3-alpine
+
+WORKDIR /app
+ENV APP_NAME app.py
+
+RUN pip install --no-cache-dir boto3 openpyxl requests
+
+CMD python ./$APP_NAME
